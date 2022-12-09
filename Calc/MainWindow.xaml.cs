@@ -100,22 +100,22 @@ namespace Calc
             {
                 case "sqrt":
                     result = Math.Sqrt(double.Parse(this.Main_TextBox.Text));
-                    Upper_TextBox.Text = Upper_TextBox.Text == String.Empty ? $"sqrt({Main_TextBox.Text})" : $"sqrt({Upper_TextBox.Text})";
+                    Upper_TextBox.Text = Upper_TextBox.Text == String.Empty || Upper_TextBox.Text.Contains("=") ? $"sqrt({Main_TextBox.Text})" : $"sqrt({Upper_TextBox.Text})";
                     Main_TextBox.Text = result.ToString();
                     break;
                 case "sqr":
                     result = Math.Pow(double.Parse(this.Main_TextBox.Text),2);
-                    Upper_TextBox.Text = Upper_TextBox.Text == String.Empty ? $"sqr({Main_TextBox.Text})" : $"sqr({Upper_TextBox.Text})";
+                    Upper_TextBox.Text = Upper_TextBox.Text == String.Empty || Upper_TextBox.Text.Contains("=") ? $"sqr({Main_TextBox.Text})" : $"sqr({Upper_TextBox.Text})";
                     Main_TextBox.Text = result.ToString();
                     break;
                 case "reverse":
                     result = 1/double.Parse(this.Main_TextBox.Text);
-                    Upper_TextBox.Text = Upper_TextBox.Text == String.Empty ? $"1/({Main_TextBox.Text})" : $"1/({Upper_TextBox.Text})";
+                    Upper_TextBox.Text = Upper_TextBox.Text == String.Empty || Upper_TextBox.Text.Contains("=") ? $"1/({Main_TextBox.Text})" : $"1/({Upper_TextBox.Text})";
                     Main_TextBox.Text = result.ToString();
                     break;
                 case "procent":
                     result = 0.01 * double.Parse(this.Main_TextBox.Text);
-                    Upper_TextBox.Text = Upper_TextBox.Text == String.Empty ? $"0,01*({Main_TextBox.Text})" : $"0,01*({Upper_TextBox.Text})";
+                    Upper_TextBox.Text = Upper_TextBox.Text == String.Empty || Upper_TextBox.Text.Contains("=") ? $"0,01*({Main_TextBox.Text})" : $"0,01*({Upper_TextBox.Text})";
                     Main_TextBox.Text = result.ToString();
                     break;
             }
